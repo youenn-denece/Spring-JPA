@@ -4,13 +4,11 @@ import org.example.model.Account;
 import org.example.model.Agency;
 import org.example.model.Client;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -159,6 +157,21 @@ public class Main {
         em.persist(account6);
 
         transac.commit();
+        System.out.println("##############  Affichage informations ############## ");
+        Query query= em.createQuery("select a from Agency a");
+        List<Agency> agencies = query.getResultList();
+        for(Agency a : agencies){
+            System.out.println("######################");
+            System.out.println("Agence avec l'id : "+a.getId()+" a l'adresse : "+a.getAdress());
+            for(Account c : a.getAccounts()){
+                System.out.println("\tCompte avec l'id : "+c.getId()+" libelle : "+c.getLibel()+" solde : "+c.getSold());
+                System.out.println("\t\tProprietaire(s) du compte : ");
+                for(Client cl : c.getClients()){
+                    System.out.println("\t\tClient avec l'id : "+cl.getId()+" nom : "+cl.getName()+" prenom : "+cl.getFirstName());
+                }
+            }
+            System.out.println("######################");
+        }
         em.close();
         emf.close();
     }
