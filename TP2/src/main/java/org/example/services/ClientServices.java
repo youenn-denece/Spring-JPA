@@ -1,20 +1,10 @@
+/*
 package org.example.services;
 
 import org.example.interfaces.DAO;
 import org.example.model.Client;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 public class ClientServices implements DAO<Client> {
-    private final EntityManagerFactory emf;
-    private final EntityManager em;
-    public ClientServices(){
-        emf = Persistence.createEntityManagerFactory("TP2");
-        em = emf.createEntityManager();
-    }
-
     @Override
     public void begin() {
         em.getTransaction().begin();
@@ -48,9 +38,5 @@ public class ClientServices implements DAO<Client> {
         em.getTransaction().commit();
     }
 
-    @Override
-    public void close() {
-        em.close();
-        emf.close();
-    }
 }
+*/

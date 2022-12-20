@@ -8,6 +8,4 @@ public interface DAO <T>{
     boolean delete(T o);
     T findById(int id);
     void send();
-    void close();
-
 }

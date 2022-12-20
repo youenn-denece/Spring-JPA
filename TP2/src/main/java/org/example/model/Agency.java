@@ -16,6 +16,9 @@ public class Agency {
     private Collection<Account> accounts;
 
     public Agency(){}
+    public Agency(String adress) {
+        this.adress = adress;
+    }
     public Agency(String adress, Collection<Account> accounts) {
         this.adress = adress;
         this.accounts = accounts;

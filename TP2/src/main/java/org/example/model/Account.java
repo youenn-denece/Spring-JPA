@@ -10,7 +10,7 @@ public class Account {
     private int id;
     @Column(nullable = false)
     private String libel;
-    @Column(nullable = false, length = 27)
+    @Column(name="IBAN",nullable = false, length = 27)
     private String iban;
     @Column(precision = 10, scale = 2)
     private Double sold;
@@ -23,6 +23,11 @@ public class Account {
     private Collection<Client> clients;
 
     public Account(){}
+    public Account(String libel, String iban, Double sold) {
+        this.libel = libel;
+        this.iban = iban;
+        this.sold = sold;
+    }
     public Account(String libel, String iban, Double sold, Agency agency, Collection<Client> clients) {
         this.libel = libel;
         this.iban = iban;

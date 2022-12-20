@@ -17,7 +17,11 @@ public class Client {
     private Collection<Account> accounts;
 
     public Client(){}
-
+    public Client(String name, String firstName, Date birthDate) {
+        this.name = name;
+        this.firstName = firstName;
+        this.birthDate = birthDate;
+    }
     public Client(String name, String firstName, Date birthDate, Collection<Account> accounts) {
         this.name = name;
         this.firstName = firstName;

@@ -1,19 +1,10 @@
+/*
 package org.example.services;
 
 import org.example.interfaces.DAO;
 import org.example.model.Agency;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 public class AgencyServices implements DAO<Agency> {
-    private final EntityManagerFactory emf;
-    private final EntityManager em;
-    public AgencyServices(){
-        emf = Persistence.createEntityManagerFactory("TP2");
-        em = emf.createEntityManager();
-    }
     @Override
     public void begin(){
         em.getTransaction().begin();
@@ -41,9 +32,5 @@ public class AgencyServices implements DAO<Agency> {
     public void send() {
         em.getTransaction().commit();
     }
-    @Override
-    public void close() {
-        em.close();
-        emf.close();
-    }
 }
+*/
