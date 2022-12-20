@@ -8,7 +8,7 @@
 
 
         <properties>
-            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="javax.persistence.schema-generation.database.action" value="none"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/banque_bdd"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
